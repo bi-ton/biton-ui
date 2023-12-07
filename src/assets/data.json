@@ -1,0 +1,17 @@
+[
+    {
+      "name": "iPhone X",
+      "price": 499,
+      "purchased": true
+    },
+    {
+      "name": "iPhone 11 Pro",
+      "price": 699,
+      "purchased": false
+    },
+    {
+      "name": "iPhone XR",
+      "price": 599,
+      "purchased": true
+    }
+  ]

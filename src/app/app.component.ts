@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -9,12 +10,19 @@ export class AppComponent {
   text: string = "";
   price: number = 0;
 
-  items: Item[] = [
-    { purchase: 'Хлеб', done: false, price: 15.9 },
-    { purchase: 'Масло', done: false, price: 60 },
-    { purchase: 'Картофель', done: true, price: 22.6 },
-    { purchase: 'Сыр', done: false, price: 310 },
-  ];
+  items: Item[] = [];
+
+  constructor(private http: HttpClient) {
+
+  }
+
+  ngOnInit(){
+    this.getData().subscribe({next: (data: any) => this.items=data});
+  }
+
+  getData(){
+    return this.http.get("assets/data.json")
+  }
 
   addItem(text: string, price: number): void {
     if (
@@ -29,12 +37,12 @@ export class AppComponent {
 }
 
 class Item {
-  purchase: string;
+  name: string;
   done: boolean;
   price: number;
 
-  constructor(purchase: string, price: number) {
-    this.purchase = purchase;
+  constructor(name: string, price: number) {
+    this.name = name;
     this.price = price;
     this.done = false;
   }
