@@ -38,8 +38,8 @@ export class AppComponent {
 
 class Item {
   name: string;
-  done: boolean;
   price: number;
+  done: boolean;
 
   constructor(name: string, price: number) {
     this.name = name;
