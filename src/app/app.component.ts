@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { ApiService } from 'src/services/api.service';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ export class AppComponent {
 
   items: Item[] = [];
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, public api: ApiService) {
 
   }
 
@@ -21,7 +22,8 @@ export class AppComponent {
   }
 
   getData(){
-    return this.http.get("assets/data.json")
+    return this.api.getProducts()
+    //return this.http.get("assets/data.json")
   }
 
   addItem(text: string, price: number): void {
@@ -36,7 +38,7 @@ export class AppComponent {
   }
 }
 
-class Item {
+export class Item {
   name: string;
   price: number;
   done: boolean;
