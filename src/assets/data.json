@@ -1,17 +1,17 @@
 [
     {
-      "name": "iPhone X",
-      "price": 499,
+      "name": "apple",
+      "price": 49.9,
       "purchased": true
     },
     {
-      "name": "iPhone 11 Pro",
-      "price": 699,
+      "name": "lemon",
+      "price": 73.12,
       "purchased": false
     },
     {
-      "name": "iPhone XR",
-      "price": 599,
+      "name": "onion",
+      "price": 234.1,
       "purchased": true
     }
   ]
