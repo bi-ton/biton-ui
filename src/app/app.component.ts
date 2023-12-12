@@ -22,8 +22,8 @@ export class AppComponent {
   }
 
   getData(){
-    //return this.api.getProducts()
-    return this.http.get("assets/data.json")
+    return this.api.getProducts()
+    //return this.http.get("assets/data.json")
   }
 
   addItem(text: string, price: number): void {
